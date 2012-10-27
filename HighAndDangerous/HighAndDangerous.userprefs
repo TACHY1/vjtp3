@@ -1,10 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../../tp3-lula/src/Assets/Scripts/Editor/MapCreatorInspector.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DungeonCreator.cs">
     <Files>
-      <File FileName="Assets/Scripts/DungeonCreator.cs" Line="9" Column="17" />
-      <File FileName="../../../tp3-lula/src/Assets/Scripts/MapCreator.cs" Line="13" Column="20" />
-      <File FileName="../../../tp3-lula/src/Assets/Scripts/Editor/MapCreatorInspector.cs" Line="17" Column="36" />
+      <File FileName="../../../tp3-lula/src/Assets/Scripts/MapCreator.cs" Line="24" Column="36" />
+      <File FileName="../../../tp3-lula/src/Assets/Scripts/Editor/MapCreatorInspector.cs" Line="8" Column="42" />
+      <File FileName="Assets/Scripts/DungeonCreator.cs" Line="22" Column="49" />
+      <File FileName="Assets/Scripts/Editor/DungeonCreatorTester.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Chunk.cs" Line="10" Column="44" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
