@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{1364F61B-B502-3280-20C3-AC21DD8ECB55}") = "HighAndDangerous", "Assembly-CSharp.csproj", "{CDAFF8DE-47D5-3D22-F40B-0691BBE1E01D}"
 EndProject
+Project("{1364F61B-B502-3280-20C3-AC21DD8ECB55}") = "HighAndDangerous", "Assembly-CSharp-Editor.csproj", "{BF1D8F34-4C7B-B195-57D4-957C6AB473FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,11 +15,15 @@ Global
 		{CDAFF8DE-47D5-3D22-F40B-0691BBE1E01D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDAFF8DE-47D5-3D22-F40B-0691BBE1E01D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDAFF8DE-47D5-3D22-F40B-0691BBE1E01D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF1D8F34-4C7B-B195-57D4-957C6AB473FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF1D8F34-4C7B-B195-57D4-957C6AB473FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF1D8F34-4C7B-B195-57D4-957C6AB473FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF1D8F34-4C7B-B195-57D4-957C6AB473FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-		GlobalSection(MonoDevelopProperties) = preSolution
+									GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
