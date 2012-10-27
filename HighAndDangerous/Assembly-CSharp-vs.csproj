@@ -52,6 +52,7 @@
      <Compile Include="Assets\Fantasy AI Free Edition\Scripts\Player\HealthPotion.cs" />
      <Compile Include="Assets\Fantasy AI Free Edition\Scripts\Player\PlayerController.cs" />
      <None Include="Assets\Fantasy AI Free Edition\README.txt" />
+     <None Include="Assets\Standard Assets\Nobiax Free Textures 13 &amp; 14\Nobiax Free Textures 13 &amp; 14.txt" />
      <None Include="Assets\Fantasy AI Free Edition\Models\SkeletonData\animations.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
