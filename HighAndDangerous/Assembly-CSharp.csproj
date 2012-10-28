@@ -49,10 +49,12 @@
      <Compile Include="Assets\Fantasy AI Free Edition\Scripts\AI Scripts\FreeAI.cs" />
      <Compile Include="Assets\Fantasy AI Free Edition\Scripts\AI Scripts\Health.cs" />
      <Compile Include="Assets\Fantasy AI Free Edition\Scripts\Player\AICount.cs" />
+     <Compile Include="Assets\Fantasy AI Free Edition\Scripts\Player\HealthDamage.cs" />
      <Compile Include="Assets\Fantasy AI Free Edition\Scripts\Player\HealthPotion.cs" />
      <Compile Include="Assets\Fantasy AI Free Edition\Scripts\Player\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Chunk.cs" />
      <Compile Include="Assets\Scripts\DungeonCreator.cs" />
+     <Compile Include="Assets\Scripts\TimerController.cs" />
      <None Include="Assets\Fantasy AI Free Edition\README.txt" />
      <None Include="Assets\Standard Assets\Nobiax Free Textures 13 &amp; 14\Nobiax Free Textures 13 &amp; 14.txt" />
      <None Include="Assets\Fantasy AI Free Edition\Models\SkeletonData\animations.txt" />

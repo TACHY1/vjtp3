@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour {
 	private bool dealdamage;
 	public int TotalAICount;
 	public bool YouWon;
+	public bool YouDie;
+	public bool YouWonTheLevel;
 	private bool w;
 	
 	public Vector3 For;
@@ -31,6 +33,8 @@ public class PlayerController : MonoBehaviour {
 		
 		w=true;
 		playd=true;
+		YouDie = false;
+		YouWonTheLevel = false;
 	
 	}
 	
@@ -165,16 +169,22 @@ public class PlayerController : MonoBehaviour {
 		Health php=(Health)GetComponent("Health");
 		if(php){
 		float hpp=php.CurrentHealth;
-		GUI.Button(new Rect(0, 30, 300, 26), "Health: "+hpp);
-		}
-		GUI.Button(new Rect(0, 60, 300, 26), "Evil Skellies Left: "+TotalAICount);
-			
-		//YOU WON!
-		if(YouWon){
-		GUI.Box(new Rect(200, 200, 330, 260), "Congratulations!  You have defeated all the Evil Skellies!");
-			if(GUI.Button(new Rect(310, 400, 120, 26), "Continue Playing"))YouWon=false;
+		GUI.Label(new Rect(0, 30, 300, 26), "Health: "+hpp);
 		}
 		
+		//YOU WON!
+		if(YouWon){
+			GUI.Box(new Rect(200, 200, 330, 260), "Congratulations!  You have defeated all the Evil Skellies!");
+			if(GUI.Button(new Rect(310, 400, 120, 26), "Continue Playing"))YouWon=false;
+		}
+		if(YouDie){
+			GUI.Box(new Rect(200, 200, 330, 260), "Opps!!!  You Die!!");
+			if(GUI.Button(new Rect(310, 400, 120, 26), "Continue Playing"))YouDie=false;
+		}
+		if(YouWonTheLevel){
+			GUI.Box(new Rect(200, 200, 330, 260), "Yeah!!!  You pass the level!!");
+			if(GUI.Button(new Rect(310, 400, 120, 26), "Continue Playing"))YouWonTheLevel=false;
+		}
 	}
 	
 }
