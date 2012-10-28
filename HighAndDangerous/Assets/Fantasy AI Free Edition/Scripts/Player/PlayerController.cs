@@ -174,8 +174,8 @@ public class PlayerController : MonoBehaviour {
 		
 		//YOU WON!
 		if(YouWon){
-			GUI.Box(new Rect(200, 200, 330, 260), "Congratulations!  You have defeated all the Evil Skellies!");
-			if(GUI.Button(new Rect(310, 400, 120, 26), "Continue Playing"))YouWon=false;
+			//GUI.Box(new Rect(200, 200, 330, 260), "Congratulations!  You have defeated all the Evil Skellies!");
+			//if(GUI.Button(new Rect(310, 400, 120, 26), "Continue Playing"))YouWon=false;
 		}
 		if(YouDie){
 			GUI.Box(new Rect(200, 200, 330, 260), "Opps!!!  You Die!!");
