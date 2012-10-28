@@ -5,6 +5,8 @@ Project("{1364F61B-B502-3280-20C3-AC21DD8ECB55}") = "HighAndDangerous", "Assembl
 EndProject
 Project("{1364F61B-B502-3280-20C3-AC21DD8ECB55}") = "HighAndDangerous", "Assembly-CSharp-Editor.csproj", "{BF1D8F34-4C7B-B195-57D4-957C6AB473FB}"
 EndProject
+Project("{1364F61B-B502-3280-20C3-AC21DD8ECB55}") = "HighAndDangerous", "Assembly-UnityScript-firstpass.unityproj", "{83193983-6838-CD9B-D7A2-95B4C2EF7362}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,11 +21,15 @@ Global
 		{BF1D8F34-4C7B-B195-57D4-957C6AB473FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF1D8F34-4C7B-B195-57D4-957C6AB473FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF1D8F34-4C7B-B195-57D4-957C6AB473FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83193983-6838-CD9B-D7A2-95B4C2EF7362}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83193983-6838-CD9B-D7A2-95B4C2EF7362}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83193983-6838-CD9B-D7A2-95B4C2EF7362}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83193983-6838-CD9B-D7A2-95B4C2EF7362}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-									GlobalSection(MonoDevelopProperties) = preSolution
+																		GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
