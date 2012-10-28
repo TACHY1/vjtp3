@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Editor\DungeonCreatorTester.cs" />
+     <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
      <None Include="Assets\Fantasy AI Free Edition\README.txt" />
      <None Include="Assets\Standard Assets\Nobiax Free Textures 13 &amp; 14\Nobiax Free Textures 13 &amp; 14.txt" />
      <None Include="Assets\Fantasy AI Free Edition\Models\SkeletonData\animations.txt" />

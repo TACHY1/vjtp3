@@ -23,11 +23,12 @@ public class Chunk : MonoBehaviour {
 	}
 	
 	public Vector3 getEndNormal () {
-		return endPoint.transform.forward;
+		Plane startPlane  = (Plane) endPoint;
+		return startPlane.normal;
 	}
 	
 	public Vector3 getStartNormal() {
-		return startPoint.transform.forward;
+		return ((Plane) startPoint).normal;
 	}
 	
 	
@@ -36,7 +37,8 @@ public class Chunk : MonoBehaviour {
 	}
 
 	public void setRotation(Quaternion rot){
-		gameObject.transform.rotation = new Quaternion(0,rot.y,0,0);
+		gameObject.transform.rotation = rot;
+		//		gameObject.transform.rotation = new Quaternion(0,rot.y,0,0);
 	}
 	
 	// Use this for initialization

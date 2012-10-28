@@ -22,8 +22,9 @@ public class DungeonCreator : MonoBehaviour {
 			
 			print(lastChunkScrpt.getEndRotation());
 			print(nextChunkScript.getStartRotation());
-			nextChunkScript.setRotation(lastChunkScrpt.getEndRotation());
-
+//			nextChunkScript.setRotation(lastChunkScrpt.getEndRotation());
+			nextChunkScript.setRotation(Quaternion.FromToRotation(lastChunkScrpt.getEndNormal, nextChunkScript.getStartNormal));
+	
 			nextChunkScript.setStartPosition(lastChunkScrpt.getEndPosition()-nextChunkScript.getStartPosition());
 
 			lastChunkScrpt = nextChunkScript;
