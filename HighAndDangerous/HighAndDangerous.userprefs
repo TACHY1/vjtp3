@@ -1,9 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../../tp3-lula/src/Assets/Scripts/Editor/MapCreatorInspector.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Fantasy AI Free Edition/README.txt">
     <Files>
-      <File FileName="../../../tp3-lula/src/Assets/Scripts/MapCreator.cs" Line="24" Column="36" />
-      <File FileName="../../../tp3-lula/src/Assets/Scripts/Editor/MapCreatorInspector.cs" Line="8" Column="42" />
+      <File FileName="Assets/Fantasy AI Free Edition/README.txt" Line="28" Column="64" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
