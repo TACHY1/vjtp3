@@ -54,10 +54,17 @@
      <Compile Include="Assets\Fantasy AI Free Edition\Scripts\Player\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Chunk.cs" />
      <Compile Include="Assets\Scripts\DungeonCreator.cs" />
+     <Compile Include="Assets\Scripts\MenuGUI.cs" />
      <Compile Include="Assets\Scripts\TimerController.cs" />
+     <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
+     <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
      <None Include="Assets\Fantasy AI Free Edition\README.txt" />
      <None Include="Assets\Standard Assets\Nobiax Free Textures 13 &amp; 14\Nobiax Free Textures 13 &amp; 14.txt" />
      <None Include="Assets\Fantasy AI Free Edition\Models\SkeletonData\animations.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
+      <Project>{83193983-6838-CD9B-D7A2-95B4C2EF7362}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
