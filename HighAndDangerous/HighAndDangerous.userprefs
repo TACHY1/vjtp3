@@ -1,10 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\DungeonCreator.cs">
     <Files>
       <File FileName="Assets\Scripts\DungeonCreator.cs" Line="24" Column="4" />
       <File FileName="Assets\Scripts\Chunk.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\MenuGUI.cs" Line="20" Column="24" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Fantasy AI Free Edition/README.txt">
+    <Files>
+      <File FileName="Assets/Fantasy AI Free Edition/README.txt" Line="28" Column="64" />
+>>>>>>> 0ceb83fb76825bbada803e7be1dc76503b89ab22
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
