@@ -1,10 +1,14 @@
 .DS_Store
-Library/
+
 Temp/
 *.pidb
 build
 
-[Ll]ibrary/
+/HighAndDangerous/[Ll]ibrary/
+/HighAndDangerous/Library/*
+Library
+/Library
+
 [Tt]emp/
 [Oo]bj/
 
@@ -12,3 +16,15 @@ build
 *.csproj
 *.unityproj
 *.sln
+/HighAndDangerous/Library/guidmapper
+/HighAndDangerous/Library/assetDatabase3
+/HighAndDangerous/Library/cache/f9/f9a7d9336783be6488023f8661146206
+/HighAndDangerous/Library/previews/0e/0ef31bc7618754dbb82efed747c408a0
+/HighAndDangerous/Library/previews/64/64d4f18c58f2d437aa55c5d81dea13c8
+/HighAndDangerous/Library/previews/bb/bbf221ec125d7406abc39b78b045f7b9
+/HighAndDangerous/Library/previews/cd/cd3bfe1c708a8465d9ded7a6b114d325
+/HighAndDangerous/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+/HighAndDangerous/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll.mdb
+/HighAndDangerous/Library/ScriptAssemblies/Assembly-CSharp.dll
+/HighAndDangerous/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb
+/HighAndDangerous/Library/AssetServerCacheV3
