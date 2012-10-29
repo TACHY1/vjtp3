@@ -22,13 +22,15 @@ public class Chunk : MonoBehaviour {
 		return startPoint.transform.rotation;
 	}
 	
-	public Vector3 getEndNormal () {
-		return endPoint.transform.forward;
-	}
+//	public Vector3 getEndNormal () {
+//		MeshFilter startPlane = startPoint.GetComponent(System.MeshFilter);
+//		return startPlane.normal;
+//	}
 	
-	public Vector3 getStartNormal() {
-		return startPoint.transform.forward;
-	}
+//	public Vector3 getStartNormal() {
+//		MeshFilter endPlane  = startPoint.GetComponent(MeshFilter);
+//		return endPlane.normal;
+//	}
 	
 	
 	public void setStartPosition(Vector3 position){
@@ -36,7 +38,8 @@ public class Chunk : MonoBehaviour {
 	}
 
 	public void setRotation(Quaternion rot){
-		gameObject.transform.rotation = new Quaternion(0,rot.y,0,0);
+		gameObject.transform.rotation = rot;
+		//		gameObject.transform.rotation = new Quaternion(0,rot.y,0,0);
 	}
 	
 	// Use this for initialization
