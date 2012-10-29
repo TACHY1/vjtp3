@@ -45,8 +45,8 @@ public class DungeonCreator : MonoBehaviour {
 	public void RemoveAll() {
 		GameObject[] dungeons = GameObject.FindGameObjectsWithTag("DungeonObject");
 		
-//		for(int i = 0 ; i < dungeons.Count ; i++){
-//			Destroy(dungeons[i]);
-//		}
+		for(int i = 0 ; i < dungeons.Length ; i++){
+			UnityEngine.Object.DestroyImmediate(dungeons[i]);
+		}
 	}
 }
