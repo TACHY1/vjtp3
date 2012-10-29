@@ -6,11 +6,15 @@ public class Health : MonoBehaviour {
 	public float CurrentHealth;
 	public bool Invincible;
 	public bool Dead;
-	
-	
+	public bool mustDamage;
+	private float nextActionTime = 1f;
+	public float period = 1f;
+	private int damageHit;
 	// Use this for initialization
 	void Start () {
 		//MAKE THE CURRENT HEALTH THE MAX HEALTH AT START
+		mustDamage = false;
+		
 	CurrentHealth=MaxHealth;
 	}
 	
@@ -26,6 +30,10 @@ public class Health : MonoBehaviour {
 			CurrentHealth=0;
 			Dead=true;
 		}	
+			if (Time.time > nextActionTime && mustDamage ) {
+       			nextActionTime += period;
+        		CurrentHealth = CurrentHealth - damageHit;
+    		}
 			
 		//MAX HEALTH
 			if(CurrentHealth>=MaxHealth)CurrentHealth=MaxHealth;
@@ -41,5 +49,16 @@ public class Health : MonoBehaviour {
 		}
 		}
 	
+	}
+	
+	public void startDamage(int damage){
+		damageHit = damage;
+		nextActionTime = Time.time;
+		mustDamage = true;
+		
+	}
+	
+	public void stopDamage(){
+		mustDamage = false;
 	}
 }
