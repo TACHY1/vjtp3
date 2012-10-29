@@ -22,14 +22,15 @@ public class Chunk : MonoBehaviour {
 		return startPoint.transform.rotation;
 	}
 	
-	public Vector3 getEndNormal () {
-		Plane startPlane  = (Plane) endPoint;
-		return startPlane.normal;
-	}
+//	public Vector3 getEndNormal () {
+//		MeshFilter startPlane = startPoint.GetComponent(System.MeshFilter);
+//		return startPlane.normal;
+//	}
 	
-	public Vector3 getStartNormal() {
-		return ((Plane) startPoint).normal;
-	}
+//	public Vector3 getStartNormal() {
+//		MeshFilter endPlane  = startPoint.GetComponent(MeshFilter);
+//		return endPlane.normal;
+//	}
 	
 	
 	public void setStartPosition(Vector3 position){
