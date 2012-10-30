@@ -5,20 +5,8 @@ public class MenuGUI : MonoBehaviour {
 	
 	public Font font;
 	
-	public int size = 18;
-	
-	public int top = 50;
-	public int left = 50;
-	public int width = 50;
-	public int height = 50;
-	
-	void Start(){
-	}
-
-	void Update () {
-		if(Input.anyKeyDown){
-			Application.LoadLevel("GameScene");
-		}	
+	void Update(){
+		if(Input.GetButton("Jump")) Application.LoadLevel(1);
 	}
 	
 	void OnGUI(){
@@ -28,8 +16,10 @@ public class MenuGUI : MonoBehaviour {
 		style = getTitleStyle(Color.black);
 		GUI.Label(new Rect(16, 51, 550, 100), "High And Dangerus", style);
 		
-		style = getSubtitleStyle(Color.white);
-		GUI.Label(new Rect(396, 584, 340, 40), "- Press any key to play -", style);
+		style = getSubtitleStyle(Color.yellow);
+		int left = Screen.width - 328;
+		int top = Screen.height - 51;
+		GUI.Label(new Rect(left, top, 340, 40), "- Press Space to Play -", style);
 	}
 	
 	private GUIStyle getTitleStyle(Color color){
