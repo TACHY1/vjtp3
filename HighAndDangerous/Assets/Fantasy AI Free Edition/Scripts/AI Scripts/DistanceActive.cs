@@ -3,7 +3,7 @@ using System.Collections;
 
 public class DistanceActive : MonoBehaviour {
 	//NEEDS PLAYERS LOCATION TO DETECT DISTANCE
-	public Transform Player;
+	GameObject Player;
 	//THE DISTANCE FROM PLAYER THE AI WILL BECOME ACTIVE
 	public float DistanceToActivateAI;
 	private AnimationClip idle;
@@ -13,15 +13,16 @@ public class DistanceActive : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-	FreeAI AI=(FreeAI)GetComponent("FreeAI");
-	idle=AI.IdleAnimation;	
+		FreeAI AI=(FreeAI)GetComponent("FreeAI");
+		idle=AI.IdleAnimation;
+		Player = GameObject.FindGameObjectWithTag("Player");
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		chcount=chcount+1;
 		if(chcount>=checkdistevery){
-	if(Player){
+	if(Player.transform){
 			//GET DISTANCE
 		float dist=Vector3.Distance(transform.position, Player.transform.position);
 			//GET AI COMPONENT

@@ -54,6 +54,7 @@
      <Compile Include="Assets\Fantasy AI Free Edition\Scripts\Player\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Chunk.cs" />
      <Compile Include="Assets\Scripts\DungeonCreator.cs" />
+     <Compile Include="Assets\Scripts\EndDongeonScript.cs" />
      <Compile Include="Assets\Scripts\GameManagerScript.cs" />
      <Compile Include="Assets\Scripts\MenuGUI.cs" />
      <Compile Include="Assets\Scripts\TimerController.cs" />

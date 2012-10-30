@@ -8,6 +8,7 @@ using UnityEngine;
 public class DungeonCreator : MonoBehaviour {
 
 	public GameObject TheDungeon;
+	public GameObject startChunkObject;
 	public GameObject endChunk;
 	public GameObject[] possibleChunks;
 	
@@ -22,7 +23,7 @@ public class DungeonCreator : MonoBehaviour {
 	
 	public void Generate() {
 		GameObject dungeonObject = UnityEngine.Object.Instantiate(TheDungeon) as GameObject;	
-		GameObject startChunk = UnityEngine.Object.Instantiate(possibleChunks[0]) as GameObject;
+		GameObject startChunk = UnityEngine.Object.Instantiate(startChunkObject) as GameObject;
 
 		startChunk.transform.parent = dungeonObject.transform;
 		
@@ -41,9 +42,6 @@ public class DungeonCreator : MonoBehaviour {
 			Transform spawnArea = nextChunk.transform.Find("SpawnArea");
 			if(spawnArea != null) spawnObject(spawnArea);
 			
-//			nextChunkScript.setRotation(lastChunkScrpt.getEndRotation());
-//			nextChunkScript.setRotation(Quaternion.FromToRotation(lastChunkScrpt.getEndNormal, nextChunkScript.getStartNormal));
-	
 			nextChunkScript.setStartPosition(lastChunkScrpt.getEndPosition()-nextChunkScript.getStartPosition());
 
 			lastChunkScrpt = nextChunkScript;
@@ -62,6 +60,7 @@ public class DungeonCreator : MonoBehaviour {
 		else randomIndex = 2;
 		
 		GameObject item = UnityEngine.Object.Instantiate(spawnItems[randomIndex]) as GameObject;
+		
 		item.transform.parent = transform.parent;
 		item.transform.localPosition = transform.localPosition;
 	}
