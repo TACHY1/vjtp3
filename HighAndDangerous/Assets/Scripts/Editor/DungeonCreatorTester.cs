@@ -7,7 +7,6 @@ using UnityEditor;
 [CustomEditor(typeof(DungeonCreator))]
 public class DungeonCreatorTester : Editor
 {
-
 	public override void OnInspectorGUI()
 	{
 		DrawDefaultInspector();

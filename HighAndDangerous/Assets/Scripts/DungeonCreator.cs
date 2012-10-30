@@ -8,9 +8,17 @@ using UnityEngine;
 public class DungeonCreator : MonoBehaviour {
 
 	public GameObject TheDungeon;
-	public int numChunks;
 	public GameObject endChunk;
 	public GameObject[] possibleChunks;
+	
+	public GameObject[] spawnItems;
+	
+	// Dificulty of Dungeon 
+	public int numChunks;
+	public int positiveProb = 90;
+	public int negativeProb = 5;
+	public int enemyProb    = 5;
+	
 	
 	public void Generate() {
 		GameObject dungeonObject = UnityEngine.Object.Instantiate(TheDungeon) as GameObject;	
@@ -30,6 +38,9 @@ public class DungeonCreator : MonoBehaviour {
 			Chunk nextChunkScript = (Chunk) nextChunk.gameObject.GetComponent(typeof(Chunk));
 			nextChunk.transform.parent = dungeonObject.transform;
 			
+			Transform spawnArea = nextChunk.transform.Find("SpawnArea");
+			if(spawnArea != null) spawnObject(spawnArea);
+			
 //			nextChunkScript.setRotation(lastChunkScrpt.getEndRotation());
 //			nextChunkScript.setRotation(Quaternion.FromToRotation(lastChunkScrpt.getEndNormal, nextChunkScript.getStartNormal));
 	
@@ -41,6 +52,19 @@ public class DungeonCreator : MonoBehaviour {
 		endChunkScript.setStartPosition(lastChunkScrpt.getEndPosition()-endChunkScript.getStartPosition());
 	}
 	
+	
+	private void spawnObject(Transform transform){
+		int random = UnityEngine.Random.Range(0,100);
+		int randomIndex = 0;
+		
+		if(random < positiveProb) randomIndex = 0;
+		else if(random < positiveProb + negativeProb) randomIndex = 1;
+		else randomIndex = 2;
+		
+		GameObject item = UnityEngine.Object.Instantiate(spawnItems[randomIndex]) as GameObject;
+		item.transform.parent = transform.parent;
+		item.transform.localPosition = transform.localPosition;
+	}
 	
 	public void RemoveAll() {
 		GameObject[] dungeons = GameObject.FindGameObjectsWithTag("DungeonObject");
