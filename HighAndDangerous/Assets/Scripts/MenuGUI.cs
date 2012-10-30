@@ -14,6 +14,12 @@ public class MenuGUI : MonoBehaviour {
 	
 	void Start(){
 	}
+
+	void Update () {
+		if(Input.anyKeyDown){
+			Application.LoadLevel("GameScene");
+		}	
+	}
 	
 	void OnGUI(){
 		var style = getTitleStyle(Color.white);
@@ -23,7 +29,7 @@ public class MenuGUI : MonoBehaviour {
 		GUI.Label(new Rect(16, 51, 550, 100), "High And Dangerus", style);
 		
 		style = getSubtitleStyle(Color.white);
-		GUI.Label(new Rect(396, 584, 340, 40), "- Press Space to Play -", style);
+		GUI.Label(new Rect(396, 584, 340, 40), "- Press any key to play -", style);
 	}
 	
 	private GUIStyle getTitleStyle(Color color){
