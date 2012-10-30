@@ -1,13 +1,12 @@
 fileFormatVersion: 2
-guid: 99aa412454a9f0b478b78c9f515a3135
+guid: 77335e8480854486694e84d844f7a9b0
 ModelImporter:
   fileIDToRecycleName:
-    4300000: Mesh1_Group2_Group1_Model_002
-    4300002: Mesh1_Group2_Group1_Model_001
-    4300004: Mesh1_Group2_Group1_Model
-    4300006: Mesh3_Group1_Model
-    4300008: Mesh2_Group3_Group1_Model
-    7400000: Default Take //// dungeon entrance
+    4300000: ChamferCyl01
+    4300002: hand1_MeshPart0
+    4300004: hand1_MeshPart1
+    4300006: text1
+    4300008: torch1
   serializedVersion: 10
   materials:
     importMaterials: 1
@@ -45,27 +44,14 @@ ModelImporter:
     //RootNode:
       data:
         first: 1
-        second: a6860100
+        second: ac860100
       data:
         first: 4
-        second: 861a0600
+        second: 8c1a0600
       data:
         first: 111
         second: 605fa900
-    Mesh1_Group2_Group1_Model:
-      data:
-        first: 1
-        second: a8860100
-      data:
-        first: 4
-        second: 881a0600
-      data:
-        first: 23
-        second: 66182300
-      data:
-        first: 33
-        second: a65a3200
-    Mesh1_Group2_Group1_Model_001:
+    ChamferCyl01:
       data:
         first: 1
         second: aa860100
@@ -78,33 +64,27 @@ ModelImporter:
       data:
         first: 33
         second: a85a3200
-    Mesh1_Group2_Group1_Model_002:
+    hand1:
       data:
         first: 1
-        second: a0860100
+        second: a8860100
       data:
         first: 4
-        second: 801a0600
-      data:
-        first: 23
-        second: 60182300
-      data:
-        first: 33
-        second: a05a3200
-    Mesh2_Group3_Group1_Model:
+        second: 881a0600
+    hand1_MeshPart0:
       data:
         first: 1
-        second: a2860100
+        second: a6860100
       data:
         first: 4
-        second: 821a0600
+        second: 861a0600
       data:
         first: 23
-        second: 62182300
+        second: 66182300
       data:
         first: 33
-        second: a25a3200
-    Mesh3_Group1_Model:
+        second: a65a3200
+    hand1_MeshPart1:
       data:
         first: 1
         second: a4860100
@@ -117,3 +97,29 @@ ModelImporter:
       data:
         first: 33
         second: a45a3200
+    text1:
+      data:
+        first: 1
+        second: a2860100
+      data:
+        first: 4
+        second: 821a0600
+      data:
+        first: 23
+        second: 62182300
+      data:
+        first: 33
+        second: a25a3200
+    torch1:
+      data:
+        first: 1
+        second: a0860100
+      data:
+        first: 4
+        second: 801a0600
+      data:
+        first: 23
+        second: 60182300
+      data:
+        first: 33
+        second: a05a3200
