@@ -12,9 +12,9 @@ public class GameManagerScript : MonoBehaviour {
 	// Dificultad por niveles
 	private int maxLevel = 6;
 	private int[] chunksPerLevel   = { 25, 35, 40, 45, 50, 65 };
-	private int[] positivePerLevel = { 25, 25, 20, 20, 15, 15 };
-	private int[] negativePerLevel = { 35, 40, 45, 50, 50, 55 };
-	private int[] enemiesPerLevel  = { 40, 35, 35, 30, 35, 30 };
+	private int[] positivePerLevel = { 30, 30, 25, 25, 20, 15 };
+	private int[] negativePerLevel = { 35, 40, 40, 45, 45, 50 };
+	private int[] enemiesPerLevel  = { 35, 30, 35, 30, 35, 35 };
 	
 	// Variables del Juego:
 	private int lives = 3;
@@ -84,8 +84,8 @@ public class GameManagerScript : MonoBehaviour {
 	}
 	
 	private void GameStatusGUI(){
-		GUI.Label(new Rect(20, 50, 200, 40), "Health: " + this.health, statusStyle);
-		GUI.Label(new Rect(20, 80, 200, 40), "Level: " + (this.level+1), statusStyle);
+		GUI.Label(new Rect(20, 20, 200, 40), "Health: " + this.health, statusStyle);
+		GUI.Label(new Rect(20, 50, 200, 40), "Level: " + (this.level+1), statusStyle);
 	}
 	
 	private void LevelFinishedGUI(){

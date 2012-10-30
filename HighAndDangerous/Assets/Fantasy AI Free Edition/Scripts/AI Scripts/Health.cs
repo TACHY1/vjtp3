@@ -33,6 +33,7 @@ public class Health : MonoBehaviour {
 			if (Time.time > nextActionTime && mustDamage ) {
        			nextActionTime += period;
         		CurrentHealth = CurrentHealth - damageHit;
+				if(CurrentHealth < 0) CurrentHealth = 0;
     		}
 			
 		//MAX HEALTH
