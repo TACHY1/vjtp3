@@ -78,7 +78,13 @@ public class GameManagerScript : MonoBehaviour {
 		this.GameStatusGUI();
 		
 		if(!this.is_playing) {
-			if(this.is_alive) this.LevelFinishedGUI();
+			if(this.is_alive) {
+				if(level == 7){
+					this.WonGameGUI();
+				}else{
+					this.LevelFinishedGUI();
+				}
+			}
 			else 			  this.GameOverGUI();
 		}
 	}
@@ -102,6 +108,21 @@ public class GameManagerScript : MonoBehaviour {
 	
 	private void GameOverGUI(){
 		GUI.Label(new Rect((Screen.width-600)/2, (Screen.height+100)/2, 600, 100), "Game Over", titleStyle);
+		GUI.Label(new Rect((Screen.width-700)/2, (Screen.height+300)/2, 700, 100), "Press Space to start again", subtitleStyle);
+		
+		if(Input.GetButton("Jump")){
+			this.level = 0;
+			this.is_playing = true;
+			this.is_alive = true;
+			UnityEngine.Object.DestroyImmediate(GameObject.FindGameObjectWithTag("Player"));
+			UnityEngine.Object.DestroyImmediate(GameObject.FindGameObjectWithTag("MainCamera"));
+			player = (GameObject)Instantiate(Resources.Load("Player"));
+			
+			GenerateLevel();
+		}
+	}
+	private void WonGameGUI(){
+		GUI.Label(new Rect((Screen.width-600)/2, (Screen.height+100)/2, 600, 100), "You Win!!", titleStyle);
 		GUI.Label(new Rect((Screen.width-700)/2, (Screen.height+300)/2, 700, 100), "Press Space to start again", subtitleStyle);
 		
 		if(Input.GetButton("Jump")){

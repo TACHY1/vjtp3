@@ -89,17 +89,17 @@ public class PlayerController : MonoBehaviour {
 		animation.CrossFade( Attack.name, 0.15f);
 			
 			if(atime>=AttackSpeed*0.35f&atime<=AttackSpeed*0.48f){
-			if(KillList.Count>0&dealdamage){
-				int	ls=KillList.Count;
-				for (int i = 0; i < ls; i++){
-					Health hp=(Health)KillList[i].transform.GetComponent("Health");
+			//if(KillList.Count>0&dealdamage){
+			//	int	ls=KillList.Count;
+			//	for (int i = 0; i < ls; i++){
+			//		Health hp=(Health)KillList[i].transform.GetComponent("Health");
 							
-						hp.CurrentHealth=hp.CurrentHealth-Damage;
-							if(hp.Dead){}
-							else if(hp.CurrentHealth<=0)TotalAICount=TotalAICount-1;
-					}
-					dealdamage=false;
-				}
+			//			hp.CurrentHealth=hp.CurrentHealth-Damage;
+			//				if(hp.Dead){}
+			//				else if(hp.CurrentHealth<=0)TotalAICount=TotalAICount-1;
+			//		}
+			//		dealdamage=false;
+			//	}
 			}
 			
 			if(atime>=AttackSpeed){
