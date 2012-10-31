@@ -12,9 +12,9 @@ public class GameManagerScript : MonoBehaviour {
 	// Dificultad por niveles
 	private int maxLevel = 6;
 	private int[] chunksPerLevel   = { 25, 35, 40, 45, 50, 65 };
-	private int[] positivePerLevel = { 30, 30, 25, 25, 20, 15 };
+	private int[] positivePerLevel = { 30, 30, 25, 25, 25, 25 };
 	private int[] negativePerLevel = { 35, 40, 40, 45, 45, 50 };
-	private int[] enemiesPerLevel  = { 35, 30, 35, 30, 35, 35 };
+	private int[] enemiesPerLevel  = { 35, 30, 35, 30, 30, 25 };
 	
 	// Variables del Juego:
 	private int lives = 3;
@@ -142,17 +142,19 @@ public class GameManagerScript : MonoBehaviour {
 	private void GenerateLevel(){
 		DungeonCreator generator = GetDungeonCreator();
 		generator.RemoveAll();
+		if(level <= maxLevel){
+			generator.numChunks    = chunksPerLevel[level];
+			generator.positiveProb = positivePerLevel[level];
+			generator.negativeProb = negativePerLevel[level];
+			generator.enemyProb    = enemiesPerLevel[level];
+			
+			generator.Generate();
+			Health hp=(Health)player.transform.GetComponent("Health");
+			hp.CurrentHealth = hp.MaxHealth;
+			
+			player.transform.position = new Vector3(-1, 0.5F, 0);
+		}
 		
-		generator.numChunks    = chunksPerLevel[level];
-		generator.positiveProb = positivePerLevel[level];
-		generator.negativeProb = negativePerLevel[level];
-		generator.enemyProb    = enemiesPerLevel[level];
-		
-		generator.Generate();
-		Health hp=(Health)player.transform.GetComponent("Health");
-		hp.CurrentHealth = hp.MaxHealth;
-		
-		player.transform.position = new Vector3(-1, 0.5F, 0);
 	}
 	
 	
