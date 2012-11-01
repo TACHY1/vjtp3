@@ -11,20 +11,22 @@ public class GameManagerScript : MonoBehaviour {
 	
 	// Dificultad por niveles
 	private int maxLevel = 6;
-	private int[] chunksPerLevel   = { 20, 25, 30, 45, 40, 45 };
-	private int[] positivePerLevel = { 60, 50, 40, 30, 20, 10 };
-	private int[] negativePerLevel = { 30, 35, 40, 45, 40, 40 };
-	private int[] enemiesPerLevel  = { 10, 15, 20, 25, 40, 50 };
+	private int[] chunksPerLevel   = { 25, 35, 40, 45, 50, 65 };
+	private int[] positivePerLevel = { 30, 30, 25, 25, 25, 25 };
+	private int[] negativePerLevel = { 35, 40, 40, 45, 45, 50 };
+	private int[] enemiesPerLevel  = { 35, 30, 35, 30, 30, 25 };
 	
 	// Variables del Juego:
 	private int lives = 3;
 	private int level = 0;
+	private int health = 0;
 	
 	public bool is_playing = true;
-	public bool is_alive   = true;
+	public bool is_alive   = true;	
 	
 	// Use this for initialization
 	void Start () {
+		player = GameObject.FindGameObjectWithTag("Player");
 		GenerateLevel();
 		
 		statusStyle = new GUIStyle();
@@ -48,6 +50,27 @@ public class GameManagerScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {}
 	
+	// ========== GAME Methods ==========
+
+	   public bool isPlaying() {
+	       return is_playing;
+	   }
+	
+	   public bool isAlive() {
+	       return is_alive;
+	   }
+	
+	   public void setPlaying(bool playing) {
+	       is_playing = playing;
+	   }
+	
+	   public void setAlive(bool alive) {
+	       is_alive = alive;
+	   }        
+	
+	   public void setHealth(int newHealth) {
+	       health = newHealth;
+	   }
 	
 	// ========== GUI Methods ==========
 	
@@ -55,15 +78,20 @@ public class GameManagerScript : MonoBehaviour {
 		this.GameStatusGUI();
 		
 		if(!this.is_playing) {
-			if(this.is_alive) this.LevelFinishedGUI();
+			if(this.is_alive) {
+				if(level == 7){
+					this.WonGameGUI();
+				}else{
+					this.LevelFinishedGUI();
+				}
+			}
 			else 			  this.GameOverGUI();
 		}
 	}
 	
 	private void GameStatusGUI(){
-		GUI.Label(new Rect(20, 20, 200, 40), "Time left: ", statusStyle);
-		GUI.Label(new Rect(20, 50, 200, 40), "Lifes: " + this.lives, statusStyle);
-		GUI.Label(new Rect(20, 80, 200, 40), "Level: " + (this.level+1), statusStyle);
+		GUI.Label(new Rect(20, 20, 200, 40), "Health: " + this.health, statusStyle);
+		GUI.Label(new Rect(20, 50, 200, 40), "Level: " + (this.level+1), statusStyle);
 	}
 	
 	private void LevelFinishedGUI(){
@@ -79,13 +107,32 @@ public class GameManagerScript : MonoBehaviour {
 	}
 	
 	private void GameOverGUI(){
-		GUI.Label(new Rect((Screen.width-600)/2, (Screen.height+100)/2, 600, 100), "Gamve Over", titleStyle);
+		GUI.Label(new Rect((Screen.width-600)/2, (Screen.height+100)/2, 600, 100), "Game Over", titleStyle);
 		GUI.Label(new Rect((Screen.width-700)/2, (Screen.height+300)/2, 700, 100), "Press Space to start again", subtitleStyle);
 		
 		if(Input.GetButton("Jump")){
 			this.level = 0;
 			this.is_playing = true;
 			this.is_alive = true;
+			UnityEngine.Object.DestroyImmediate(GameObject.FindGameObjectWithTag("Player"));
+			UnityEngine.Object.DestroyImmediate(GameObject.FindGameObjectWithTag("MainCamera"));
+			player = (GameObject)Instantiate(Resources.Load("Player"));
+			
+			GenerateLevel();
+		}
+	}
+	private void WonGameGUI(){
+		GUI.Label(new Rect((Screen.width-600)/2, (Screen.height+100)/2, 600, 100), "You Win!!", titleStyle);
+		GUI.Label(new Rect((Screen.width-700)/2, (Screen.height+300)/2, 700, 100), "Press Space to start again", subtitleStyle);
+		
+		if(Input.GetButton("Jump")){
+			this.level = 0;
+			this.is_playing = true;
+			this.is_alive = true;
+			UnityEngine.Object.DestroyImmediate(GameObject.FindGameObjectWithTag("Player"));
+			UnityEngine.Object.DestroyImmediate(GameObject.FindGameObjectWithTag("MainCamera"));
+			player = (GameObject)Instantiate(Resources.Load("Player"));
+			
 			GenerateLevel();
 		}
 	}
@@ -95,15 +142,19 @@ public class GameManagerScript : MonoBehaviour {
 	private void GenerateLevel(){
 		DungeonCreator generator = GetDungeonCreator();
 		generator.RemoveAll();
+		if(level <= maxLevel){
+			generator.numChunks    = chunksPerLevel[level];
+			generator.positiveProb = positivePerLevel[level];
+			generator.negativeProb = negativePerLevel[level];
+			generator.enemyProb    = enemiesPerLevel[level];
+			
+			generator.Generate();
+			Health hp=(Health)player.transform.GetComponent("Health");
+			hp.CurrentHealth = hp.MaxHealth;
+			
+			player.transform.position = new Vector3(-1, 0.5F, 0);
+		}
 		
-		generator.numChunks    = chunksPerLevel[level];
-		generator.positiveProb = positivePerLevel[level];
-		generator.negativeProb = negativePerLevel[level];
-		generator.enemyProb    = enemiesPerLevel[level];
-		
-		generator.Generate();
-		
-		player.transform.position = Vector3.zero;
 	}
 	
 	

@@ -3,12 +3,12 @@ using System.Collections;
 
 public class HealthDamage : MonoBehaviour {
 
-	public Transform Player;
+	GameObject Player;
 	public int HpBoost=100;
 	
 	// Use this for initialization
 	void Start () {
-	
+		Player = GameObject.FindGameObjectWithTag("Player");
 	}
 	
 	// Update is called once per frame
@@ -18,7 +18,7 @@ public class HealthDamage : MonoBehaviour {
 
 	
 	void OnTriggerEnter(Collider other){
-		if(other.transform==Player){
+		if(other.transform==Player.transform){
 		Health hp=(Health)other.transform.GetComponent("Health");
 		
 		if(hp){
@@ -33,7 +33,7 @@ public class HealthDamage : MonoBehaviour {
 	}
 	
 	void OnTriggerExit(Collider other){
-		if(other.transform==Player){
+		if(other.transform==Player.transform){
 		Health hp=(Health)other.transform.GetComponent("Health");
 		
 		if(hp){

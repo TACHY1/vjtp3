@@ -10,7 +10,7 @@ public class FreeAI : MonoBehaviour {
 	//ENABLES MELEE COMBAT
 	public bool EnableCombat=true;
 	//THE TARGET WHICH HE FOLLOWS AND ATTACKS
-	public Transform Target;
+	GameObject Target;
 	//THE VECTOR OF THE TARGET
 	private Vector3 CurrentTarget;
 	//TARGET VISIBIL BOOL
@@ -53,7 +53,7 @@ public class FreeAI : MonoBehaviour {
 	void Start () {
 		if(AICharacter){}
 		else AICharacter=transform;
-
+		Target = GameObject.FindGameObjectWithTag("Player");
 		
 	}
 	
@@ -72,8 +72,8 @@ public class FreeAI : MonoBehaviour {
 		else{
 		
 		//COMBAT BEHAVE
-		if(Target){
-		float Tdist=Vector3.Distance(Target.position, transform.position);	
+		if(Target.transform){
+		float Tdist=Vector3.Distance(Target.transform.position, transform.position);	
 		if(Tdist<=AttackRange){
 				if(TargetVisible)stop=true;
 			}
@@ -84,7 +84,7 @@ public class FreeAI : MonoBehaviour {
 		LayerMask lay=CharacterCollisionLayer;
 		Vector3 pdir = (Target.transform.position - transform.position).normalized;
 		float playerdirection = Vector3.Dot(pdir, transform.forward);
-		if(Physics.Linecast(transform.position, Target.position, out hit, lay)){
+		if(Physics.Linecast(transform.position, Target.transform.position, out hit, lay)){
 			TargetVisible=false;	
 			}
 			else{
@@ -98,7 +98,7 @@ public class FreeAI : MonoBehaviour {
 		}
 		//IF THE TARGET IS VISIBLE
 		if(TargetVisible){
-			CurrentTarget=Target.position;
+			CurrentTarget=Target.transform.position;
 				MoveToTarget=true;
 		}
 		
@@ -115,7 +115,7 @@ public class FreeAI : MonoBehaviour {
 				if(stop){
 						//COMBAT!
 						if(EnableCombat){
-							Health hp=(Health)Target.transform.GetComponent("Health");	
+							Health hp=(Health)Target.transform.transform.GetComponent("Health");	
 									if(hp.CurrentHealth>0){
 						Atimer+=Time.deltaTime;	
 					AICharacter.animation[AttackAnimation.name].speed = AICharacter.animation[AttackAnimation.name].length / AttackSpeed;
@@ -164,8 +164,8 @@ public class FreeAI : MonoBehaviour {
 				RaycastHit hit = new RaycastHit();	
 		LayerMask lay=CharacterCollisionLayer;
 					
-			if(Physics.Linecast(Follownodes[Follownodes.Count-1], Target.position, out hit, lay)){	
-						Follownodes.Add(Target.position);
+			if(Physics.Linecast(Follownodes[Follownodes.Count-1], Target.transform.position, out hit, lay)){	
+						Follownodes.Add(Target.transform.position);
 					
 				}
 				

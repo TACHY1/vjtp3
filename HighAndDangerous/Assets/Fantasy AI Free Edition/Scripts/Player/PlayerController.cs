@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour {
 	public Vector3 For;
 	public List<Transform> KillList;
 	
+	GameManagerScript GameManager;
+	
 	// Use this for initialization
 	void Start () {
 		if(Cam)Cam.parent=null;
@@ -39,7 +41,9 @@ public class PlayerController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
+		if(!GetGameManager().isPlaying()) return;
+		
 		//Victory
 		if(w){
 		if(TotalAICount<=0){
@@ -56,8 +60,10 @@ public class PlayerController : MonoBehaviour {
 		
 		//DEATH
 		if(dead){
+			GetGameManager().setPlaying(false);
+			GetGameManager().setAlive(false);
 			if(playd){
-			animation.CrossFade( die.name, 0.15f);	
+			animation.CrossFade( die.name, 0.15f);
 			}
 			playd=false;
 			
@@ -145,6 +151,11 @@ public class PlayerController : MonoBehaviour {
 		}
 		}
 		}
+		
+		if(php){
+			float hpp=php.CurrentHealth;
+			GetGameManager().setHealth((int)hpp);
+		}
 	}
 	
 	void OnTriggerEnter(Collider other){
@@ -166,11 +177,11 @@ public class PlayerController : MonoBehaviour {
 	}
 	void OnGUI(){
 		//HEALTH BAR AND AI COUNT
-		Health php=(Health)GetComponent("Health");
-		if(php){
-		float hpp=php.CurrentHealth;
-		GUI.Label(new Rect(0, 30, 300, 26), "Health: "+hpp);
-		}
+		//Health php=(Health)GetComponent("Health");
+		//if(php){
+		//float hpp=php.CurrentHealth;
+		//GUI.Label(new Rect(0, 30, 300, 26), "Health: "+hpp);
+		//}
 		
 		//YOU WON!
 		if(YouWon){
@@ -186,5 +197,12 @@ public class PlayerController : MonoBehaviour {
 			if(GUI.Button(new Rect(310, 400, 120, 26), "Continue Playing"))YouWonTheLevel=false;
 		}
 	}
-	
+
+	private GameManagerScript GetGameManager(){
+       if(GameManager == null) {
+               GameManager = (GameManagerScript) GameObject.FindGameObjectWithTag("GameManager").GetComponent(typeof(GameManagerScript));
+       }
+       
+       return GameManager;
+    }
 }
